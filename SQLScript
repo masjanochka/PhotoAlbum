@@ -1,0 +1,62 @@
+create database PhotoAlbum
+GO
+
+use PhotoAlbum
+GO
+
+create table users
+(
+	id int IDENTITY(1,1) PRIMARY KEY,
+	login varchar(255) NOT NULL,
+	password varchar(255) NOT NULL,
+	gmailAccount varchar(255),
+	gmailPassword varchar(255)
+)
+
+create table kids
+(
+	id int IDENTITY(1,1) PRIMARY KEY,
+	name varchar(255) NOT NULL,
+	icon varbinary(max), 
+	born DATETIME,
+	createdBy int FOREIGN KEY REFERENCES users(id)
+)
+
+create table events
+(
+	id int IDENTITY(1,1) PRIMARY KEY,
+	name varchar(255) NOT NULL,
+	description varbinary(max), 
+	isFamily bit, 
+	createdBy int FOREIGN KEY REFERENCES users(id),
+	added DATETIME,
+	updated DATETIME
+)
+
+create table familyConnections
+(
+	firstSiblingId int,
+	secondSiblingId int
+)
+
+create table albums
+(
+	id int IDENTITY(1,1) PRIMARY KEY,
+	eventId int FOREIGN KEY REFERENCES events(id)
+)
+
+create table photos
+(
+	id int IDENTITY(1,1) PRIMARY KEY,
+	albumId int FOREIGN KEY REFERENCES albums(id),
+	added DateTime,
+	name varchar (255)
+)
+
+create table cooperations
+(
+	kidId int FOREIGN KEY REFERENCES kids(id),
+	userId int FOREIGN KEY REFERENCES users(id),
+	passwordToAdd varchar (255),
+	canEdit bit 
+)
