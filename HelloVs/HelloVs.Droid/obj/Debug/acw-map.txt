@@ -1,0 +1,4 @@
+HelloVs.Droid.MainActivity, HelloVs.Droid;md5c8c8418ed349fc9466044e4e0ef2e1a8.MainActivity
+HelloVs.Droid.MainActivity, HelloVs.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5c8c8418ed349fc9466044e4e0ef2e1a8.MainActivity
+HelloVs.Droid.MainActivity;md5c8c8418ed349fc9466044e4e0ef2e1a8.MainActivity
+hellovs.droid.MainActivity;md5c8c8418ed349fc9466044e4e0ef2e1a8.MainActivity
